@@ -24,6 +24,7 @@ const Header = () => {
       {
         headers: {
           'content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
           Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
         },
       }
