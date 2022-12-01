@@ -1,0 +1,27 @@
+.tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.6em 0;
+  gap: 2em;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) {
+  .tools {
+    flex-direction: row;
+  }
+}
+/* .tools div {
+  padding: 0 0.5rem;
+} */
+input[type='color'],
+select {
+  height: 30px;
+  width: 150px;
+}
+input[type='color']:hover {
+  cursor: pointer;
+}
+label {
+  font-weight: 500;
+}

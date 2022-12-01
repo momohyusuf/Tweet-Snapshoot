@@ -1,0 +1,53 @@
+.style--one {
+  display: grid;
+  place-items: center;
+}
+.style--one article {
+  margin: 3rem 1em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  max-width: 400px;
+  padding: 1em;
+  /* border-radius: 5px; */
+}
+.style--one--header {
+  display: flex;
+  align-items: center;
+  column-gap: 0.3em;
+  margin-bottom: 1em;
+}
+.content--image--container {
+  display: flex;
+  column-gap: 0.2em;
+  margin-top: 0.3em;
+}
+
+.content--image img {
+  width: 100%;
+  max-height: 250px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+.user--image {
+  border-radius: 50%;
+}
+.download--btn {
+  background: rgb(78, 63, 251);
+  background: radial-gradient(
+    circle,
+    rgba(78, 63, 251, 1) 0%,
+    rgba(70, 236, 252, 1) 100%
+  );
+  padding: 0.5rem 3rem;
+  width: 300px;
+  font-size: 1.3rem;
+  border: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-weight: bold;
+  color: aliceblue;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.download--btn:hover {
+  color: black;
+}
