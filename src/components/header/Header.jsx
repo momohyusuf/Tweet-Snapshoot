@@ -20,7 +20,7 @@ const Header = () => {
     dispatch(updateIsLoading(true));
     // dispatch(updateTweetId(getIdFromUrl(tweetUrl)));
     const { data } = await axios.get(
-      `/2/tweets/${tweetId}?tweet.fields=created_at&expansions=author_id,attachments.media_keys&media.fields=preview_image_url,url,type&user.fields=created_at,profile_image_url,verified`,
+      `https://api.twitter.com/2/tweets/${tweetId}?tweet.fields=created_at&expansions=author_id,attachments.media_keys&media.fields=preview_image_url,url,type&user.fields=created_at,profile_image_url,verified`,
       {
         headers: {
           'content-type': 'application/json',
