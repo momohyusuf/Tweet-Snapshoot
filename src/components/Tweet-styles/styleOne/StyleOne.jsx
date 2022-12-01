@@ -12,7 +12,7 @@ const StyleOne = () => {
   const { tweet, bgColor, textColor, textFont, isLoading } = useSelector(
     (state) => state.tweet
   );
-  console.log(tweet);
+
   const ref = useRef();
   // download image
   function downloadImage() {
@@ -101,7 +101,11 @@ const StyleOne = () => {
               {new Date(tweet?.creation_date).getMinutes()} .{' '}
               {moment(tweet?.creation_date).format('ll')}
             </p>
-            <FaTwitter />
+            <FaTwitter
+              style={{
+                fontSize: '1.8rem',
+              }}
+            />
           </div>
         </article>
         <button className="download--btn" onClick={downloadImage}>

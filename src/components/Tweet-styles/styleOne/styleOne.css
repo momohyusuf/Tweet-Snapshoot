@@ -15,21 +15,15 @@
   column-gap: 0.3em;
   margin-bottom: 1em;
 }
-.content--image--container {
-  display: flex;
-  column-gap: 0.2em;
-  margin-top: 0.3em;
-}
 
 .content--image img {
+  margin: 1em 0;
   width: 100%;
-  max-height: 250px;
-  aspect-ratio: 3/2;
+  height: 250px;
   object-fit: contain;
+  display: block;
 }
-.user--image {
-  border-radius: 50%;
-}
+
 .download--btn {
   background: rgb(78, 63, 251);
   background: radial-gradient(

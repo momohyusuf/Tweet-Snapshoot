@@ -8,7 +8,7 @@ const HowToUse = () => {
     padding: '1em',
   };
   return (
-    <div className="instruction" style={style}>
+    <div className="instructions" style={style}>
       <h2>How it works</h2>
       <h4>Step 1:</h4>{' '}
       <span>Click on the share icon on the tweet you want to create</span>
