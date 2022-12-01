@@ -12,6 +12,7 @@ const StyleOne = () => {
   const { tweet, bgColor, textColor, textFont, isLoading } = useSelector(
     (state) => state.tweet
   );
+  console.log(tweet);
   const ref = useRef();
   // download image
   function downloadImage() {
@@ -48,7 +49,7 @@ const StyleOne = () => {
         >
           <div className="style--one--header">
             <img
-              src={tweet?.includes?.users[0]?.profile_image_url}
+              src={tweet?.user?.profile_pic_url}
               alt="user-image"
               className="user--image"
             />
@@ -59,26 +60,26 @@ const StyleOne = () => {
                     fontWeight: 'bold',
                   }}
                 >
-                  {tweet?.includes?.users[0]?.name}
+                  {tweet?.user?.name}
                 </span>{' '}
-                {tweet?.includes?.users[0]?.verified && <GoVerified />}
+                {tweet?.user?.is_verified && <GoVerified />}
               </p>
-              <small>@{tweet?.includes?.users[0]?.username}</small>
+              <small>@{tweet?.user?.username}</small>
             </div>
           </div>
           <p>
-            {tweet?.data?.text.split(' ').pop().startsWith('https://')
-              ? tweet?.data?.text
+            {tweet?.text.split(' ').pop().startsWith('https://')
+              ? tweet?.text
                   .split(' ')
-                  .slice(0, tweet?.data?.text.split(' ').length - 1)
+                  .slice(0, tweet?.text.split(' ').length - 1)
                   .join(' ')
-              : tweet?.data?.text}
+              : tweet?.text}
           </p>
-          {Object.keys(tweet?.includes).includes('media') && (
+          {Object.keys(tweet).includes('media_url') && (
             <div className="content--image--container">
               <div className="content--image">
                 {' '}
-                <img src={tweet?.includes?.media[0]?.url} alt="" />
+                <img src={tweet?.media_url[0]} alt="" />
               </div>
               {/* {tweet?.includes?.media[1]?.url && (
               <div className="content--image">
@@ -96,9 +97,9 @@ const StyleOne = () => {
             }}
           >
             <p>
-              {new Date(tweet?.data?.created_at).getHours()}:
-              {new Date(tweet?.data?.created_at).getMinutes()} .{' '}
-              {moment(tweet?.data?.created_at).format('ll')}
+              {new Date(tweet?.creation_date).getHours()}:
+              {new Date(tweet?.creation_date).getMinutes()} .{' '}
+              {moment(tweet?.creation_date).format('ll')}
             </p>
             <FaTwitter />
           </div>

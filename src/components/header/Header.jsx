@@ -19,16 +19,28 @@ const Header = () => {
   const getTweet = async () => {
     dispatch(updateIsLoading(true));
     // dispatch(updateTweetId(getIdFromUrl(tweetUrl)));
-    const { data } = await axios.get(
-      `https://api.twitter.com/2/tweets/${tweetId}?tweet.fields=created_at&expansions=author_id,attachments.media_keys&media.fields=preview_image_url,url,type&user.fields=created_at,profile_image_url,verified`,
-      {
-        headers: {
-          'content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-        },
-      }
-    );
+    const options = {
+      method: 'GET',
+      url: 'https://twitter154.p.rapidapi.com/tweet/details',
+      params: { tweet_id: tweetId },
+      headers: {
+        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+        'X-RapidAPI-Host': 'twitter154.p.rapidapi.com',
+      },
+    };
+    const { data } = await axios(options);
+    // ****** previous twitter api  gave cors errors**************
+    // const { data } = await axios.get(
+    //   `https://api.twitter.com/2/tweets/${tweetId}?tweet.fields=created_at&expansions=author_id,attachments.media_keys&media.fields=preview_image_url,url,type&user.fields=created_at,profile_image_url,verified`,
+    //   {
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Access-Control-Allow-Origin': '*',
+    //       Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+    //     },
+    //   }
+    // );
+    // ****************
     dispatch(updateIsLoading(false));
     dispatch(updateTweet(data));
   };
