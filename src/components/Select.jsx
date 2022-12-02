@@ -34,7 +34,7 @@ const Select = () => {
         <select
           name="fonts"
           id=""
-          onClick={(e) => dispatch(updateTextFont(e.target.value))}
+          onChange={(e) => dispatch(updateTextFont(e.target.value))}
         >
           {/* <option value="">Change text font</option> */}
           {fonts.map((item, index) => (

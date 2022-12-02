@@ -79,7 +79,7 @@ const StyleOne = () => {
             <div className="content--image--container">
               <div className="content--image">
                 {' '}
-                <img src={tweet?.media_url[0]} alt="" />
+                {tweet?.media_url && <img src={tweet?.media_url[0]} alt="" />}
               </div>
               {/* {tweet?.includes?.media[1]?.url && (
               <div className="content--image">
